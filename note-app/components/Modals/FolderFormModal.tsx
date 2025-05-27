@@ -48,26 +48,15 @@ export default function FolderFormModal({
   folders,
 }: Props) {
   const handleColorSelect = (color: string) => {
-    if (
-      colorOnly &&
-      updateColor &&
-      Array.isArray(folders) &&
-      selectedFolderIndex != null
-    ) {
-      const target = folders[selectedFolderIndex];
-      if (target) {
-        updateColor(target._id, color);
-        onClose();
-      }
-    } else {
-      setFolderColor(color);
-    }
+    setFolderColor(color); // 색상만 선택하고, 실제 저장은 onSubmit에서 실행
   };
+  
 
   return (
     <Modal transparent visible={visible} animationType="slide">
       <View style={styles.overlay}>
         <View style={styles.modal}>
+          {/* 이름 입력 필드 (색상만 변경이 아닌 경우에만) */}
           {!colorOnly && (
             <>
               <Text style={styles.title}>
@@ -82,6 +71,7 @@ export default function FolderFormModal({
             </>
           )}
 
+          {/* 색상 선택 영역 */}
           {!nameOnly && (
             <>
               <Text style={{ fontWeight: 'bold', marginTop: 8 }}>폴더 색상 선택</Text>
@@ -104,14 +94,14 @@ export default function FolderFormModal({
             </>
           )}
 
-          {!colorOnly && (
-            <TouchableOpacity style={styles.createButton} onPress={onSubmit}>
-              <Text style={styles.createButtonText}>
-                {editMode ? '변경' : '생성'}
-              </Text>
-            </TouchableOpacity>
-          )}
+          {/* 변경/생성 버튼 - 무조건 보여줌 */}
+          <TouchableOpacity style={styles.createButton} onPress={onSubmit}>
+            <Text style={styles.createButtonText}>
+              {editMode ? '변경' : '생성'}
+            </Text>
+          </TouchableOpacity>
 
+          {/* 닫기 버튼 */}
           <Pressable onPress={onClose}>
             <Text style={styles.cancel}>닫기</Text>
           </Pressable>

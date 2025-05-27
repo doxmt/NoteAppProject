@@ -50,6 +50,8 @@ export default function DocumentTab() {
     setFolderColor,
     updateFolderColor,
     moveFolder,
+    selectedFolderId,         
+    setSelectedFolderId,
   } = useFolderManager();
 
   const [actionModalVisible, setActionModalVisible] = useState(false);
@@ -61,6 +63,7 @@ export default function DocumentTab() {
   const {  reloadNotes } = useNoteManager(currentFolderId);
   const { notes } = useNoteManager(null);
   const [nameOnly, setNameOnly] = useState(false);
+
 
 
 
@@ -166,6 +169,7 @@ export default function DocumentTab() {
               setSelectedIndex(index);
               setEditMode(true);
               setFolderName(folder.name);
+              setSelectedFolderId(folder._id);
               setFolderColor(folder.color || '#FFD700');
               setFolderModalVisible(true);
               setOptionsVisible(null);
@@ -178,7 +182,9 @@ export default function DocumentTab() {
             <TouchableOpacity onPress={() => {
               setSelectedIndex(index);
               setColorEditMode(true);
+              setEditMode(true);
               setFolderModalVisible(true);
+              setSelectedFolderId(folder._id);
               setFolderColor(folder.color || '#FFD700');
               setOptionsVisible(null);
             }}>
@@ -245,7 +251,14 @@ export default function DocumentTab() {
         setFolderName={setFolderName}
         folderColor={folderColor}
         setFolderColor={setFolderColor}
-        onSubmit={editMode ? renameFolder : createFolder}
+        onSubmit={
+          editMode
+            ? (colorEditMode
+                ? () => updateFolderColor(selectedFolderId!, folderColor)
+                : renameFolder)
+            : createFolder
+        }
+        
         editMode={editMode}
         colorOnly={colorEditMode}
         nameOnly={nameOnly}

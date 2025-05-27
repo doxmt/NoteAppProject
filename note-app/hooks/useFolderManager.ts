@@ -16,6 +16,7 @@ const [folders, setFolders] = useState<Folder[]>([]);
   const [optionsVisible, setOptionsVisible] = useState<number | null>(null);
   const [selectedFolderId, setSelectedFolderId] = useState<string | null>(null);
   const [folderColor, setFolderColor] = useState<string>('#fff');
+  const [colorEditMode, setColorEditMode] = useState(false);
 
   
 
@@ -112,19 +113,21 @@ const [folders, setFolders] = useState<Folder[]>([]);
   
 
   const renameFolder = async () => {
-    if (folderName.trim() === '' || selectedIndex === null) return;
-    const targetFolder = folders[selectedIndex];
+    if (!folderName.trim() || !selectedFolderId) return;
+  
+    const targetFolder = folders.find(f => f._id === selectedFolderId);
     if (!targetFolder) return;
   
     try {
       const res = await axios.patch(`${API_BASE}/api/folders/rename`, {
-        folderId: targetFolder._id,
+        folderId: selectedFolderId,
         newName: folderName,
       });
   
       if (res.status === 200) {
-        const updated = [...folders];
-        updated[selectedIndex] = { ...targetFolder, name: folderName };
+        const updated = folders.map(folder =>
+          folder._id === selectedFolderId ? { ...folder, name: folderName } : folder
+        );
         setFolders(updated);
       }
   
@@ -133,12 +136,15 @@ const [folders, setFolders] = useState<Folder[]>([]);
     }
   
     setFolderName('');
-    setSelectedIndex(null);
+    setSelectedFolderId(null);
     setEditMode(false);
     setFolderModalVisible(false);
   };
   
+  
   const updateFolderColor = async (folderId: string, newColor: string) => {
+    if (!folderId || !newColor) return;
+  
     try {
       const res = await axios.patch(`${API_BASE}/api/folders/color`, {
         folderId,
@@ -150,6 +156,11 @@ const [folders, setFolders] = useState<Folder[]>([]);
           folder._id === folderId ? { ...folder, color: newColor } : folder
         );
         setFolders(updated);
+        setFolderModalVisible(false);
+        setEditMode(false);
+        setColorEditMode(false);
+        setSelectedFolderId(null);
+        setFolderColor('#fff');
       }
     } catch (error: any) {
       console.error('색상 변경 실패:', error.response?.data || error.message);
@@ -157,7 +168,9 @@ const [folders, setFolders] = useState<Folder[]>([]);
   
     setOptionsVisible(null);
     setFolderColor('#fff');
+    setSelectedFolderId(null);
   };
+  
 
   const moveFolder = async (sourceId: string, targetId: string) => {
     try {
