@@ -1,0 +1,6 @@
+module Pods_noteapp {
+  umbrella header "Pods-noteapp-umbrella.h"
+
+  export *
+  module * { export * }
+}

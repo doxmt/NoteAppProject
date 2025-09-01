@@ -252,7 +252,9 @@ export default function FolderScreen() {
             {/* 📄 노트 목록 */}
             {notes.map((note) => (
               <View key={note.id} style={styles.folderContainer}>
-                <TouchableOpacity style={styles.folderItem}>
+                <TouchableOpacity style={styles.folderItem}
+                 onPress={() => router.push(`/pdf/${note.id}`)}
+                 >
                   <NoteIcon width={120} height={120} />
                 </TouchableOpacity>
                 <Text
