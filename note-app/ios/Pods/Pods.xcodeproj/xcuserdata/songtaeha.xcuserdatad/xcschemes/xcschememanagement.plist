@@ -24,21 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>EXJSONUtils.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>EXManifests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>EXUpdatesInterface.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Expo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -184,17 +169,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RNSVG-RNSVGFilters.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RNSVG.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>RNScreens.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RNZipArchive.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -264,6 +249,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>React-RCTFBReactNativeSpec.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>React-RCTFabric.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -280,6 +270,11 @@
 			<false/>
 		</dict>
 		<key>React-RCTNetwork.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-RCTRuntime.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -389,6 +384,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>React-jsinspectortracing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-jsitooling.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>React-jsitracing.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -404,7 +409,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>React-nativeconfig.xcscheme</key>
+		<key>React-oscompat.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -420,6 +425,11 @@
 			<false/>
 		</dict>
 		<key>React-rendererconsistency.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-renderercss.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -459,22 +469,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactAppDependencyProvider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ReactCodegen.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>ReactCommon.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SSZipArchive-SSZipArchive.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SSZipArchive.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -499,37 +504,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>expo-dev-client.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>expo-dev-launcher-EXDevLauncher.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>expo-dev-launcher.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>expo-dev-menu-EXDevMenu.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>expo-dev-menu-interface.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>expo-dev-menu.xcscheme</key>
+		<key>fast_float.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>fmt.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>glog-glog_privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -544,22 +529,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>react-native-get-random-values.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>react-native-pdf.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>react-native-safe-area-context.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>react-native-skia.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

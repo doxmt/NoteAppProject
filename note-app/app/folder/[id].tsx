@@ -18,7 +18,7 @@ import PdfUploadModal from '@/components/Modals/PdfUploadModal';
 import * as Crypto from 'expo-crypto';
 import * as FileSystem from 'expo-file-system';
 import { getUserId } from '@/utils/auth'; // 🔥 이 줄이 있어야 getUserId() 사용 가능
-import { useNoteManager, uploadNoteToServer } from '@/hooks/\buseNoteManager';
+import { useNoteManager, uploadNoteToServer } from '@/hooks/useNoteManager';
 import { Note } from '@/types/note';
 import NoteIcon from '../../assets/images/noteicon.svg';
 
@@ -252,7 +252,9 @@ export default function FolderScreen() {
             {/* 📄 노트 목록 */}
             {notes.map((note) => (
               <View key={note.id} style={styles.folderContainer}>
-                <TouchableOpacity style={styles.folderItem}>
+                <TouchableOpacity style={styles.folderItem}
+                 onPress={() => router.push(`/pdf/${note.id}`)}
+                 >
                   <NoteIcon width={120} height={120} />
                 </TouchableOpacity>
                 <Text
