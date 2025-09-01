@@ -10,9 +10,9 @@
 #endif
 #endif
 
-#import "FBReactNativeSpec/FBReactNativeSpec.h"
-#import "FBReactNativeSpecJSI.h"
+#import "RCTModuleProviders.h"
 #import "RCTModulesConformingToProtocolsProvider.h"
+#import "RCTThirdPartyComponentsProvider.h"
 #import "react/renderer/components/RNCWebViewSpec/ComponentDescriptors.h"
 #import "react/renderer/components/RNCWebViewSpec/EventEmitters.h"
 #import "react/renderer/components/RNCWebViewSpec/Props.h"
@@ -37,12 +37,6 @@
 #import "react/renderer/components/rnscreens/RCTComponentViewHelpers.h"
 #import "react/renderer/components/rnscreens/ShadowNodes.h"
 #import "react/renderer/components/rnscreens/States.h"
-#import "react/renderer/components/rnskia/ComponentDescriptors.h"
-#import "react/renderer/components/rnskia/EventEmitters.h"
-#import "react/renderer/components/rnskia/Props.h"
-#import "react/renderer/components/rnskia/RCTComponentViewHelpers.h"
-#import "react/renderer/components/rnskia/ShadowNodes.h"
-#import "react/renderer/components/rnskia/States.h"
 #import "react/renderer/components/rnsvg/ComponentDescriptors.h"
 #import "react/renderer/components/rnsvg/EventEmitters.h"
 #import "react/renderer/components/rnsvg/Props.h"
@@ -65,8 +59,6 @@
 #import "rnreanimatedJSI.h"
 #import "rnscreens/rnscreens.h"
 #import "rnscreensJSI.h"
-#import "rnskia/rnskia.h"
-#import "rnskiaJSI.h"
 #import "rnsvg/rnsvg.h"
 #import "rnsvgJSI.h"
 #import "safeareacontext/safeareacontext.h"

@@ -1,6 +1,6 @@
 {
   "name": "ExpoCrypto",
-  "version": "14.0.2",
+  "version": "14.1.4",
   "summary": "Provides cryptography primitives for Android, iOS and web.",
   "description": "Provides cryptography primitives for Android, iOS and web.",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "platforms": {
     "ios": "15.1",
     "tvos": "15.1",
-    "osx": "10.15"
+    "osx": "11.0"
   },
   "swift_versions": "5.4",
   "source": {
